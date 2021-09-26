@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="foo">Hello</div>
+  </body>
+  <script>
+    console.log(document.nodeType); // 9
+    console.log(document.nodeName); // #document
+
+    const $foo = document.getElementById("foo");
+    console.log($foo.nodeType); // 1
+    console.log($foo.nodeName); // DIV
+
+    const $textNode = $foo.firstChild;
+    console.log($textNode.nodeType); // 3
+    console.log($textNode.nodeName); // #text
+  </script>
+</html>
