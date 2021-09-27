@@ -4,18 +4,16 @@
     <meta charset="UTF-8" />
   </head>
   <body>
-    <div id="foo">Hello</div>
+    <div style="color: red">Hello World</div>
   </body>
   <script>
-    console.log(document.nodeType); // 9
-    console.log(document.nodeName); // #document
+    const $box = document.querySelector(".box");
 
-    const $foo = document.getElementById("foo");
-    console.log($foo.nodeType); // 1
-    console.log($foo.nodeName); // DIV
+    // $box에 적용된 모든 CSS스타일을 담고있는 객체를 취득함
+    const getComputedStyle = window.getComputedStyle($box);
 
-    const $textNode = $foo.firstChild;
-    console.log($textNode.nodeType); // 3
-    console.log($textNode.nodeName); // #text
+    console.log(getComputedStyle); // CSSStyleDeclaration
+
+    console.log(getComputedStyle.color); // 적용된 color : red
   </script>
 </html>
