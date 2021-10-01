@@ -7,13 +7,12 @@
     <div style="color: red">Hello World</div>
   </body>
   <script>
-    const $box = document.querySelector(".box");
+    const $button = document.querySelector("button");
 
-    // $box에 적용된 모든 CSS스타일을 담고있는 객체를 취득함
-    const getComputedStyle = window.getComputedStyle($box);
+    const fff = () => {
+      console.log("클릭함");
+    };
 
-    console.log(getComputedStyle); // CSSStyleDeclaration
-
-    console.log(getComputedStyle.color); // 적용된 color : red
+    $button.addEventListener("click", fff);
   </script>
 </html>
