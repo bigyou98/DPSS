@@ -4,15 +4,39 @@
     <meta charset="UTF-8" />
   </head>
   <body>
-    <div style="color: red">Hello World</div>
+    <ul id="fruits">
+      <li id="apple">Apple</li>
+      <li id="banana">Banana</li>
+      <li id="orange">Orange</li>
+    </ul>
   </body>
   <script>
-    const $button = document.querySelector("button");
+    const $fruits = document.getElementById("fruits");
+    const $banana = document.getElementById("banana");
 
-    const fff = () => {
-      console.log("클릭함");
-    };
+    // li요소 클릭 시 캡쳐링 단계의 이벤트를 캐치한다.
+    $fruits.addEventListener(
+      "click",
+      (e) => {
+        console.log(`이벤트 단계:${e.eventPhase}`); // 1 : 캡쳐링 단계
+        console.log(`이벤트 타겟:${e.target}`); // LI오브젝트
+        console.log(`커런트 타겟:${e.currentTarget}`); // UL오브젝트
+      },
+      true
+    );
 
-    $button.addEventListener("click", fff);
+    // 타깃 단계의 이벤트를 캐치한다.
+    $banana.addEventListener("click", (e) => {
+      console.log(`이벤트 단계:${e.eventPhase}`); // 2 : 타깃 단계
+      console.log(`이벤트 타겟:${e.target}`); // LI오브젝트
+      console.log(`커런트 타겟:${e.currentTarget}`); // LI오브젝트
+    });
+
+    // 버블링 단계의 이벤트를 캐치한다.
+    $fruits.addEventListener("click", (e) => {
+      console.log(`이벤트 단계:${e.eventPhase}`); // 3 : 버블링 단계
+      console.log(`이벤트 타겟:${e.target}`); // LI오브젝트
+      console.log(`커런트 타겟:${e.currentTarget}`); // UL오브젝트
+    });
   </script>
 </html>
