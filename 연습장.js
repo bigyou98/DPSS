@@ -31,3 +31,14 @@ $container.addEventListener(
     $throttleCount.textContent = ++throttleCount;
   }, 100)
 );
+
+const foo = () => {
+  console.log("foo");
+};
+
+const bar = () => {
+  console.log("bar");
+};
+
+setTimeout(foo, 0);
+bar();
