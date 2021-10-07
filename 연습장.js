@@ -1,44 +1,44 @@
-const $container = document.querySelector(".container");
-const $normalCount = document.querySelector(".normal-count");
-const $throttleCount = document.querySelector(".throttle-count");
+// const $container = document.querySelector(".container");
+// const $normalCount = document.querySelector(".normal-count");
+// const $throttleCount = document.querySelector(".throttle-count");
 
-const $msg = document.querySelector(".msg");
+// const $msg = document.querySelector(".msg");
 
-const throttle = (callback, delay) => {
-  let timerId;
-  return (event) => {
-    if (timerId) return;
-    timerId = setTimeout(
-      () => {
-        callback(event);
-        timerId = null;
-      },
-      delay,
-      event
-    );
-  };
-};
+// const throttle = (callback, delay) => {
+//   let timerId;
+//   return (event) => {
+//     if (timerId) return;
+//     timerId = setTimeout(
+//       () => {
+//         callback(event);
+//         timerId = null;
+//       },
+//       delay,
+//       event
+//     );
+//   };
+// };
 
-let normalCount = 0;
-$container.addEventListener("scroll", () => {
-  $normalCount.textContent = ++normalCount;
-});
+// let normalCount = 0;
+// $container.addEventListener("scroll", () => {
+//   $normalCount.textContent = ++normalCount;
+// });
 
-let throttleCount = 0;
-$container.addEventListener(
-  "scroll",
-  throttle(() => {
-    $throttleCount.textContent = ++throttleCount;
-  }, 100)
-);
+// let throttleCount = 0;
+// $container.addEventListener(
+//   "scroll",
+//   throttle(() => {
+//     $throttleCount.textContent = ++throttleCount;
+//   }, 100)
+// );
 
-const foo = () => {
-  console.log("foo");
-};
+// const foo = () => {
+//   console.log("foo");
+// };
 
-const bar = () => {
-  console.log("bar");
-};
+// const bar = () => {
+//   console.log("bar");
+// };
 
-setTimeout(foo, 0);
-bar();
+// setTimeout(foo, 0);
+// bar();
