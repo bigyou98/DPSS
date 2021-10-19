@@ -1,8 +1,7 @@
-// "/dev/stdin" 채점할때만 바꿔주기
-let input = require("fs")
-  .readFileSync("예제.txt")
-  .toString()
-  .split(" ")
-  .map(Number);
-
-console.log(input[0] + input[1]);
+let newId = "123_.def&&*%^..";
+let reg = /.{2,}/g;
+if (reg.test(newId)) {
+  newId = newId.replace(reg, ".");
+}
+console.log(reg);
+console.log(newId);
