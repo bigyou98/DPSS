@@ -20,13 +20,3 @@ console.log(fibonacci(5)); //5
 //   return answer;
 // }
 
-// function fibonacci(v) {
-//   let bottomup = [];
-//   bottomup[0] = 0;
-//   bottomup[1] = 1;
-//   bottomup[2] = 1;
-//   for (let i = 3; i <= v; i++) {
-//     bottomup[i] = (bottomup[i - 1] % 1234567) + (bottomup[i - 2] % 1234567);
-//   }
-//   return bottomup[v];
-// }
