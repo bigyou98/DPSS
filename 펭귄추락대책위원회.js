@@ -33,3 +33,5 @@ console.log(frontMin + backMin);
 
 // keyPoint
 // 처음부터 map으로 number로 변환시키지 않고 비교와 대입할때만 형변환을 해서 메모리와 시간 단축
+// slice로 했을때는왜 안됬을까 slice가 문제였을까 spread연산자가 문제였을까 아니면 Math.min을 사용해서 그랬을까
+// 복합적으로 다 조금씩 용량을 차지했던 것인가보다
