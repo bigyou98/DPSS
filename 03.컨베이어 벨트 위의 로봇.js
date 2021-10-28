@@ -28,15 +28,31 @@ const [x, ...arr] = fs
 
 let cnt = 1;
 
+// 레일 갯수
 let n = Number(x.charAt(0));
+
+// 내구도가 0인 칸의 갯수
 let k = Number(x.charAt(2));
 
 let conveyorBelt = arr[0].split(" ").map(Number);
 
 // 중지됬는지 확인하는 변수
-let isNotStop = true;
 
-// 중지되면 종료한다.
-while (isNotStop) {
+// k가 0이 된다면 종료
+while (k !== 0) {
+  // 일단 cnt 올리고 시작
   cnt++;
+  for (let i = 0; i < 2 * n; i++) {
+    // i 가 한칸임
+    // 0이 아니라면
+    if (conveyorBelt[i] !== 0) {
+      conveyorBelt[i] = conveyorBelt[i] - 1;
+    } else {
+      // 0이라면 브레이크
+      k--;
+      continue;
+    }
+  }
 }
+
+console.log(cnt);
