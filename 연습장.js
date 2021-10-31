@@ -1,3 +1,4 @@
-let reg = /[a-z]/;
+let nameL = "qwe1342";
+let reg = /[0-9+]/g;
 
-console.log(reg.test("asd"));
+console.log(nameL.split(reg));
