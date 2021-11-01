@@ -1,4 +1,6 @@
-let nameL = "qwe1342";
-let reg = /[0-9+]/g;
+let str = "1234567";
 
-console.log(nameL.split(reg));
+console.log(str);
+qwe = "Hel";
+str = str.slice(qwe.length, str.length);
+console.log(str);
