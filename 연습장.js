@@ -1,18 +1,9 @@
-let board = [
-  [0, 0, 1, 1],
-  [1, 1, 1, 1],
-];
-
-let col;
-let colArr = [];
-for (let i = 0; i < board[0].length; i++) {
-  col = 1;
-  for (let j = 0; j < board.length - 1; j++) {
-    if (board[j][i] === 1 && board[j + 1][i] === 1) {
-      col++;
-    }
-  }
-  colArr.push(col);
-}
-
-console.log(colArr);
+let reg = /[대a0]/g; // "대", "a", 0 중에 하나를 모두 찾는다.
+let str =
+  "대나무 빨대 a급 제품은 10개 남아있습니다. 010-1111-2222 로 Call Me~!";
+console.log(str.match(reg));
+// [
+//   '대', '대', 'a',
+//   '0',  '0',  '0',
+//   'a'
+// ]

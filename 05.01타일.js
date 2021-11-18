@@ -5,7 +5,9 @@ const input = Number(fs.readFileSync("/dev/stdin").toString());
 
 // 00을 포함할수 있는 갯수를 구하는 함수 만들기
 
+// 처음에 배열의 크기를 지정해두면 시간과 메모리가 절약이 된다
 let memo = Array(Number(input)).fill(0);
+// let memo = [];
 
 // 직접 구해보고 규칙을 찾아냄
 // DP가 메모리제이션이기때문에 필요할 때마다 계산하는 게아니라 계산하고 메모리에 저장하고
@@ -13,10 +15,10 @@ let memo = Array(Number(input)).fill(0);
 
 memo[0] = 1;
 memo[1] = 2;
-memo[2] = 3;
-
-for (let i = 3; i < input; i++) {
-  memo[i] = (memo[i - 2] % 15746) + (memo[i - 1] % 15746);
+if (input >= 3) {
+  for (let i = 2; i < input; i++) {
+    memo[i] = (memo[i - 2] % 15746) + (memo[i - 1] % 15746);
+  }
 }
 
 console.log(memo[input - 1] % 15746);
